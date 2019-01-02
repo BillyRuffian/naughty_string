@@ -1,0 +1,234 @@
+---
+naughty:
+  programming:
+    description: Strings which may be used elsewhere in code
+    tags: []
+    strings:
+      - undefined
+      - undef
+      - null
+      - NULL
+      - (null)
+      - nil
+      - NIL
+      - true
+      - false
+      - True
+      - False
+      - TRUE
+      - FALSE
+      - None
+      - hasOwnProperty
+      - then
+      - \
+      - \\
+
+  numerics:
+    description: Strings which can be interpreted as numeric
+    tags: []
+    strings:
+      - 0
+      - 1
+      - 1.00
+      - $1.00
+      - 1/2
+      - 1E2
+      - 1E02
+      - 1E+02
+      - -1
+      - -1.00
+      - -$1.00
+      - -1/2
+      - -1E2
+      - -1E02
+      - -1E+02
+      - 1/0
+      - 0/0
+      - -2147483648/-1
+      - -9223372036854775808/-1
+      - -0
+      - -0.0
+      - +0
+      - +0.0
+      - 0.00
+      - 0..0
+      - .
+      - 0.0.0
+      - 0,00
+      - 0,,0
+      - ,
+      - 0,0,0
+      - 0.0/0
+      - 1.0/0.0
+      - 0.0/0.0
+      - 1,0/0,0
+      - 0,0/0,0
+      - --1
+      - -
+      - -.
+      - -,
+      - 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+      - NaN
+      - Infinity
+      - -Infinity
+      - INF
+      - 1#INF
+      - -1#IND
+      - 1#QNAN
+      - 1#SNAN
+      - 1#IND
+      - 0x0
+      - 0xffffffff
+      - 0xffffffffffffffff
+      - 0xabad1dea
+      - 123456789012345678901234567890123456789
+      - 1,000.00
+      - 1 000.00
+      - 1'000.00
+      - 1,000,000.00
+      - 1 000 000.00
+      - 1'000'000.00
+      - 1.000,00
+      - 1 000,00
+      - 1'000,00
+      - 1.000.000,00
+      - 1 000 000,00
+      - 1'000'000,00
+      - 01000
+      - 08
+      - 09
+      - 2.2250738585072011e-308
+
+  ascii_punctuation:
+    description: All of these characters may need to be escaped in some contexts.  Divided into three groups based on (US-layout) keyboard position.
+    tags: []
+    strings: 
+      - ,./;'[]\-=
+      - <>?:"{}|_+
+      - !@#$%^&*()`~
+  
+  c0_control_codes:
+    description: >-
+      U+0001 through U+0008, U+000E through U+001F, and U+007F (DEL).
+      Often forbidden to appear in various text-based file formats (e.g. XML),
+      or reused for internal delimiters on the theory that they should never
+      appear in input.
+      Strings may appear to be blank or mojibake in some viewers.
+    tags: []
+    strings:
+      - 
+      
+  c1_control_codes:
+    description: >-
+      U+0080 through U+0084 and U+0086 through U+009F.
+      Commonly misinterpreted as additional graphic characters.
+      The next line may appear to be blank, mojibake, or dingbats in some viewers.
+    tags: []
+    strings:
+      - 
+      
+  unicode_control_codes:
+    description: >-
+      Unicode additional control characters: all of the characters with
+      general category Cf (in Unicode 8.0.0).
+      The next line may appear to be blank or mojibake in some viewers.
+    tags: ['unicode']
+    strings:
+      - ­؀؁؂؃؄؅؜۝܏᠎​‌‍‎‏‪‫‬‭‮⁠⁡⁢⁣⁤⁦⁧⁨⁩⁪⁫⁬⁭⁮⁯﻿￹￺￻𑂽𛲠𛲡𛲢𛲣𝅳𝅴𝅵𝅶𝅷𝅸𝅹𝅺󠀁󠀠󠀡󠀢󠀣󠀤󠀥󠀦󠀧󠀨󠀩󠀪󠀫󠀬󠀭󠀮󠀯󠀰󠀱󠀲󠀳󠀴󠀵󠀶󠀷󠀸󠀹󠀺󠀻󠀼󠀽󠀾󠀿󠁀󠁁󠁂󠁃󠁄󠁅󠁆󠁇󠁈󠁉󠁊󠁋󠁌󠁍󠁎󠁏󠁐󠁑󠁒󠁓󠁔󠁕󠁖󠁗󠁘󠁙󠁚󠁛󠁜󠁝󠁞󠁟󠁠󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁨󠁩󠁪󠁫󠁬󠁭󠁮󠁯󠁰󠁱󠁲󠁳󠁴󠁵󠁶󠁷󠁸󠁹󠁺󠁻󠁼󠁽󠁾󠁿
+      - ﻿
+      - ￾
+      
+  whitespace:
+    description: >-
+      All of the characters with category Zs, Zl, or Zp (in Unicode
+      version 8.0.0), plus U+0009 (HT), U+000B (VT), U+000C (FF), U+0085 (NEL),
+      and U+200B (ZERO WIDTH SPACE), which are in the C categories but are often
+      treated as whitespace in some contexts.
+      This file unfortunately cannot express strings containing
+      U+0000, U+000A, or U+000D (NUL, LF, CR).
+      The next line may appear to be blank or mojibake in some viewers.
+      The next line may be flagged for "trailing whitespace" in some viewers.
+    tags: []
+    strings:
+      - 	              ​    　
+      
+  unicode_symbols:
+    description: Strings which contain common unicode symbols (e.g. smart quotes)
+    tags: ['unicode']
+    strings:
+      - Ω≈ç√∫˜µ≤≥÷
+      - åß∂ƒ©˙∆˚¬…æ
+      - œ∑´®†¥¨ˆøπ“‘
+      - ¡™£¢∞§¶•ªº–≠
+      - ¸˛Ç◊ı˜Â¯˘¿
+      - ÅÍÎÏ˝ÓÔÒÚÆ☃
+      - Œ„´‰ˇÁ¨ˆØ∏”’
+      - `⁄€‹›ﬁﬂ‡°·‚—±
+      - ⅛⅜⅝⅞
+      - ЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя
+      - ٠١٢٣٤٥٦٧٨٩
+      
+  unicode_super_sub_scripts_and_accents:
+    description: Strings which contain unicode subscripts/superscripts; can cause rendering issues
+    tags: ['unicode']
+    strings:
+      - ⁰⁴⁵
+      - ₀₁₂
+      - ⁰⁴⁵₀₁₂
+      - ด้้้้้็็็็็้้้้้็็็็็้้้้้้้้็็็็็้้้้้็็็็็้้้้้้้้็็็็็้้้้้็็็็็้้้้้้้้็็็็็้้้้้็็็็ ด้้้้้็็็็็้้้้้็็็็็้้้้้้้้็็็็็้้้้้็็็็็้้้้้้้้็็็็็้้้้้็็็็็้้้้้้้้็็็็็้้้้้็็็็ ด้้้้้็็็็็้้้้้็็็็็้้้้้้้้็็็็็้้้้้็็็็็้้้้้้้้็็็็็้้้้้็็็็็้้้้้้้้็็็็็้้้้้็็็็
+      
+  quotation_marks:
+    description: Strings which contain misplaced quotation marks; can cause encoding errors
+    tags: []
+    strings:
+      - '
+      - "
+      - ''
+      - ""
+      - '"'
+      - "''''"'"
+      - "'"'"''''"
+      - <foo val=“bar” />
+      - <foo val=“bar” />
+      - <foo val=”bar“ />
+      - <foo val=`bar' />
+
+  two_byte_characters:
+    description: Strings which contain two-byte characters: can cause rendering issues or character-length issues
+    tags: ['unicode']
+    strings:
+      - 田中さんにあげて下さい
+      - パーティーへ行かないか
+      - 和製漢語
+      - 部落格
+      - 사회과학원 어학연구소
+      - 찦차를 타고 온 펲시맨과 쑛다리 똠방각하
+      - 社會科學院語學研究所
+      - 울란바토르
+      - 𠜎𠜱𠝹𠱓𠱸𠲖𠳏
+
+  unicode_character_union:
+    description: >-
+      A super string recommended by VMware Inc. Globalization Team: 
+      can effectively cause rendering issues or character-length issues to validate product globalization readiness.
+
+      表          CJK_UNIFIED_IDEOGRAPHS (U+8868)
+      ポ          KATAKANA LETTER PO (U+30DD)
+      あ          HIRAGANA LETTER A (U+3042)
+      A           LATIN CAPITAL LETTER A (U+0041)
+      鷗          CJK_UNIFIED_IDEOGRAPHS (U+9DD7)
+      Œ           LATIN SMALL LIGATURE OE (U+0153) 
+      é           LATIN SMALL LETTER E WITH ACUTE (U+00E9)
+      Ｂ           FULLWIDTH LATIN CAPITAL LETTER B (U+FF22)
+      逍          CJK_UNIFIED_IDEOGRAPHS (U+900D)
+      Ü           LATIN SMALL LETTER U WITH DIAERESIS (U+00FC)
+      ß           LATIN SMALL LETTER SHARP S (U+00DF)
+      ª           FEMININE ORDINAL INDICATOR (U+00AA)
+      ą           LATIN SMALL LETTER A WITH OGONEK (U+0105)
+      ñ           LATIN SMALL LETTER N WITH TILDE (U+00F1)
+      丂          CJK_UNIFIED_IDEOGRAPHS (U+4E02)
+      㐀          CJK Ideograph Extension A, First (U+3400)
+      𠀀          CJK Ideograph Extension B, First (U+20000)
+    tags: ['unicode']
+    strings:
+      - 表ポあA鷗ŒéＢ逍Üßªąñ丂㐀𠀀
